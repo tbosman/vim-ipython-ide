@@ -19,7 +19,7 @@ endfunc
 
 func! CreateAndAttach()
     let g:vide_main_buf = term_start('bash --login')
-    InitBufList()
+    call InitBufList()
     let g:vide_buf_list =  add(g:vide_buf_list, g:vide_main_buf)
 endfunc
 
