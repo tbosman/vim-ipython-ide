@@ -45,10 +45,11 @@ func! SendToTerminal(bufnr, text)
 endfunc
 
 func! CPasteMain() range
+    let save_pos = getpos(".")
     let lines = getline(a:firstline, a:lastline)
     let text =  join(lines, "\<c-q>\<c-j>") . "\n"
-    echo 'hi'
     call SendToTerminal(g:vide_main_buf, text)
+    execute "normal!" . a:lastline . "G"
 endfunc
 
 
